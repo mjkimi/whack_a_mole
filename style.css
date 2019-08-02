@@ -1,0 +1,212 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: #ffc600;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+li.choose {
+  font-size: 2.5rem;
+}
+
+ul li {
+  list-style: none;
+  margin: 15px;
+}
+
+ul li label {
+  position: relative;
+}
+
+ul li label input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+ul li label input[type='radio']:checked ~ .icon-box {
+  border: 3px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(33, 156, 243, 0.5), 0 0 20px rgba(33, 156, 243, 0.5),
+    0 0 30px rgba(33, 156, 243, 0.5), inset 0 0 10px rgba(33, 156, 243, 1);
+}
+
+.icon-box {
+  cursor: pointer;
+  border: 3px solid #ffc600;
+  padding: 1rem;
+  /* background: #fff; */
+}
+
+.fa-snowman {
+  color: #be4bdb;
+  font-size: 30px;
+}
+.fa-cat {
+  color: #82c91e;
+  font-size: 35px;
+}
+
+.fa-dragon {
+  color: #fd7e14;
+  font-size: 40px;
+}
+
+button.startGame {
+  background: yellow;
+  border-radius: 30px 0 30px 0;
+  color: black;
+  border-color: black;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.cursor {
+  cursor: none;
+  /* display: none; */
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  transform-origin: center center;
+  /* transform: translate(-50%, -50%); */
+  /*  */
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  animation: cursorAnim 0.5s infinite alternate;
+}
+
+.cursor::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 8px solid black;
+  border-radius: 50%;
+  opacity: 0.5;
+  /* transform: translate(-50%, -50%); */
+  /* top: -8px;
+  left: -8px; */
+  animation: cursorAnim2 0.5s infinite alternate;
+}
+
+@keyframes cursorAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.7);
+    transform-origin: center;
+  }
+}
+@keyframes cursorAnim2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.4);
+    transform-origin: center;
+  }
+}
+
+.expand {
+  animation: cursorAnim3 0.5s forwards;
+  border: 1px solid red;
+}
+
+@keyframes cursorAnim3 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(3);
+    /* transform-origin: center; */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    /* transform-origin: center; */
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 10rem;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.score {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0 3rem;
+  line-height: 1;
+  border-radius: 1rem;
+}
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  cursor: none;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  background: url(dirt.svg) bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.mole {
+  background: url('mole.svg') bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+
+.hole.up .mole {
+  top: 0;
+}

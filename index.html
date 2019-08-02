@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Whack A Mole!</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Whack-a-mole! <span class="score">0</span></h1>
+    <ul>
+      <li class="choose">Select Your Level:</li>
+      <li>
+        <label>
+          <input type="radio" name="level" checked="checked" />
+          <div class="icon-box">
+            <i class="fas fa-snowman"></i>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="level" />
+          <div class="icon-box">
+            <i class="fas fa-cat"></i>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" name="level" />
+          <div class="icon-box">
+            <i class="fas fa-dragon"></i>
+          </div>
+        </label>
+      </li>
+    </ul>
+    <button class="startGame">Start!</button>
+    <div class="game">
+      <div class="hole hole1">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole2">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole3">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole4">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole5">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole6">
+        <div class="mole"></div>
+      </div>
+    </div>
+    <!-- cursor -->
+    <div class="cursor"></div>
+    <script src="main.js"></script>
+  </body>
+</html>
